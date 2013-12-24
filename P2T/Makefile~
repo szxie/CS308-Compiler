@@ -1,0 +1,31 @@
+all: SC
+
+OBJS = SCp.o  \
+       codegen.o \
+       main.o    \
+       SCl.o  \
+       corefn.o  \
+
+CPPFLAGS = `llvm-config --cppflags`
+LDFLAGS = `llvm-config --ldflags`
+LIBS = `llvm-config --libs`
+
+clean:
+	$(RM) -rf SCp.cpp SCp.hpp SCp SCl.cpp $(OBJS)
+
+SCp.cpp: SCp.y
+	bison -d -o $@ $^
+	
+SCp.hpp: SCp.cpp
+
+SCl.cpp: SCl.l SCp.hpp
+	flex -o $@ $^
+
+%.o: %.cpp
+	g++ -c $(CPPFLAGS) -o $@ $<
+
+
+SC: $(OBJS)
+	g++ -o $@ $(OBJS) $(LIBS) $(LDFLAGS) -lpthread -ldl -lcurses
+
+

@@ -1,0 +1,74 @@
+PROGRAM
+	EXTDEFS
+		EXTDEF
+			SPEC
+				TYPE
+			FUNC
+				ID: main
+				LP
+				PARAS
+					EMPTY
+				RP
+			STMTBLOCK
+				LC
+				DEFS
+					DEF
+						SPEC
+							TYPE
+						DECS
+							DEC
+								VAR
+									ID: i
+						SEMI
+					DEFS
+						EMPTY
+				STMTS
+					STMT
+						FOR
+						LP
+						EXP
+							EXP
+								ID: i
+								ARRS
+									EMPTY
+							ASSIGNOP
+							EXP
+								INT: 0
+						SEMI
+						EXP
+							EXP
+								ID: i
+								ARRS
+									EMPTY
+							LESS
+							EXP
+								INT: 4
+						SEMI
+						EXP
+							INCR
+							EXP
+								ID: i
+								ARRS
+									EMPTY
+						RP
+						STMT
+							STMTBLOCK
+								LC
+								DEFS
+									EMPTY
+								STMTS
+									EMPTY
+								RC
+					STMTS
+						STMT
+							RETURN
+							EXP
+								ID: i
+								ARRS
+									EMPTY
+							SEMI
+						STMTS
+							EMPTY
+				RC
+		EXTDEFS
+			EMPTY

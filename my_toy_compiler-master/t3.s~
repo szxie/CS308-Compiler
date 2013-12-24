@@ -1,0 +1,1 @@
+%result = mul i32 %x, 8

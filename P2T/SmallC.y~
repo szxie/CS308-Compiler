@@ -1,0 +1,57 @@
+%{
+/*
+	SmallC.y for yacc
+	tmp to keep return node, when one rule is matched
+	pa is just the parent node
+	stack to store the return node
+	stackID to store the identifiers we get in sequence
+	stackINT to store the integers we get in sequence
+	flag to record whether there is error
+	tmpS is the input string we get from lex
+	
+	For every rules, I mainly create a new syntax tree with it's left as parent node and add all the children node.
+	For children node, if it's nonterminal, pop from the stack; if it's terminal, just create it.
+	
+	by Jinyi
+*/
+#include "node.h"
+#include <cstdio>
+#include <cstdlib>
+NBlock *programBlock;
+extern int yylex();
+void yyerror(const char *s) 
+{ 
+	std::printf("Error:%s\n", s);
+	std::exit(1);
+}
+
+%}
+
+%union {
+	Node *node;
+	NBlock *block;
+	NExpression *expr;
+	NStatement *stmt;
+	std::string *string;
+	int token;
+}
+
+%token <token> ADD
+%token <string> INT
+
+%type <expr> EXP
+
+%start	EXP
+
+%%
+EXP	:	EXP ADD EXP{
+		$$ = new NBinaryOperator(*$1, $2, *$3);			
+	}
+	|	INT{
+		$$ = new NInteger(atol($1->c_str()));
+		delete $1;			
+	}
+	|
+	;
+		
+%%

@@ -1,0 +1,17 @@
+FILES:
+SmallC.l:	.l for flex
+SmallC.y:	.y for yacc
+tree.c:		some functions for tree node and stack
+Makefile:	the Makefile
+a.out:		my program
+
+INPUT&OUTPUT:
+ErrorIn:	test for syntax error input
+ErrorOut
+ForIn:		test for a "for" statement
+ForOut
+ExpIn:		test for the priority of binary operators
+ExpOut
+
+by:
+Jinyi Lu
