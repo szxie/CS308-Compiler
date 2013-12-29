@@ -1,4 +1,5 @@
-int a()
+int main()
 {
-	int x;
+	write(-0327);
+	return 0;
 }

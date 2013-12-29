@@ -39,14 +39,28 @@
    enum yytokentype {
      INT = 258,
      ID = 259,
-     TYPE = 260,
-     LP = 261,
-     RP = 262,
-     LC = 263,
-     RC = 264,
-     COMMA = 265,
-     SEMI = 266,
-     ASSIGNOP = 267
+     RETURN = 260,
+     IF = 261,
+     ELSE = 262,
+     STRUCT = 263,
+     TYPE = 264,
+     LP = 265,
+     RP = 266,
+     LB = 267,
+     RB = 268,
+     LC = 269,
+     RC = 270,
+     COMMA = 271,
+     DOT = 272,
+     SEMI = 273,
+     ASSIGNOP = 274,
+     BITXOR = 275,
+     EQUAL = 276,
+     MOD = 277,
+     ADD = 278,
+     MINUS = 279,
+     LOGINOT = 280,
+     UMINUS = 281
    };
 #endif
 
@@ -67,7 +81,7 @@ typedef union YYSTYPE
 
 
 /* Line 2068 of yacc.c  */
-#line 71 "SCp.hpp"
+#line 85 "SCp.hpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

@@ -1,17 +1,11 @@
 #include <iostream>
-#include <vector>
+#include <cstdio>
+#include <cstdlib>
 using namespace std;
-
-struct strings{
-	string s1;
-	string s2;
-	strings(string s1, string s2) s1(s1), s2(s2) {}
-} Strings;
-
-vector<Strings> b;
-
 int main()
 {
-	b.push_back(Strings("a","b"));
+	string s ="0xA";
+	cout << strtol(s->c_str(), NULL, 16) << endl;
+	
 	return 0;
 }

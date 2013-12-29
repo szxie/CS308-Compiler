@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include "node.h"
@@ -12,11 +13,14 @@ extern Node *program;
 int main(int argc, char **argv)
 {
 	yyin = fopen(argv[1], "r");
+	ofstream fout("test.s");
 	yyparse();
 	
 	content* a = new content();
 	a->clear();
-	
-	cout << program->codeGen(a) << endl;
+	string re = program->codeGen(a);
+	cout << re;
+	fout << re;
+	fout.close();
 	return 0;
 }

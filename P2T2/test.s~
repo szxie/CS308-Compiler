@@ -1,0 +1,57 @@
+@.str = private unnamed_addr constant [3 x i8] c"%d\00", align 1
+
+@.str1 = private unnamed_addr constant [4 x i8] c"%d\0A\00", align 1
+
+declare i32 @__isoc99_scanf(i8*, ...)
+
+declare i32 @printf(i8*, ...)
+
+%struct.acrossthegreatxxxxwallwecanreacheverycornerintheworld = type { i32 }
+%struct.haoehaoehaoewozhendehaoe = type { i32, i32, i32, i32 }
+%struct.doubleO = type { i32, i32, i32, i32, i32 }
+@A = common global %struct.acrossthegreatxxxxwallwecanreacheverycornerintheworld zeroinitializer, align 4
+@B = common global %struct.acrossthegreatxxxxwallwecanreacheverycornerintheworld zeroinitializer, align 4
+@C = common global %struct.haoehaoehaoewozhendehaoe zeroinitializer, align 4
+@R = common global %struct.doubleO zeroinitializer, align 4
+@G = common global %struct.doubleO zeroinitializer, align 4
+@T = common global %struct.doubleO zeroinitializer, align 4
+
+define i32 @main() {
+entry:
+	%call0 = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32* getelementptr inbounds (%struct.doubleO* @T, i32 0, i32 0))
+	%call1 = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32* getelementptr inbounds (%struct.acrossthegreatxxxxwallwecanreacheverycornerintheworld* @A, i32 0, i32 0))
+	%call2 = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32* getelementptr inbounds (%struct.haoehaoehaoewozhendehaoe* @C, i32 0, i32 1))
+C	store i32 %xor0, i32* getelementptr inbounds (%struct.doubleO* @G, i32 0, i32 1), align 4
+	%2 = load i32* getelementptr inbounds (%struct.doubleO* @G, i32 0, i32 1), align 4
+	%3 = load i32* getelementptr inbounds (%struct.acrossthegreatxxxxwallwecanreacheverycornerintheworld* @A, i32 0, i32 0), align 4
+	%cmp0 = icmp eq i32 %2, %3
+	br i1 %cmp0, label %if.then0, label %if.else0
+
+if.then0:
+	store i32 215, i32* getelementptr inbounds (%struct.haoehaoehaoewozhendehaoe* @C, i32 0, i32 0), align 4
+	br label %if.end0
+
+if.else0:
+	store i32 0, i32* getelementptr inbounds (%struct.haoehaoehaoewozhendehaoe* @C, i32 0, i32 0), align 4
+	br label %if.end0
+
+if.end0:
+	%4 = load i32* getelementptr inbounds (%struct.haoehaoehaoewozhendehaoe* @C, i32 0, i32 0), align 4
+	%call3 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([4 x i8]* @.str1, i32 0, i32 0), i32 %4)
+	%call4 = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32* getelementptr inbounds (%struct.doubleO* @R, i32 0, i32 2))
+	%5 = load i32* getelementptr inbounds (%struct.doubleO* @R, i32 0, i32 2), align 4
+	%cmp1 = icmp ne i32 %5, 0
+	br i1 %cmp1, label %if.then1, label %if.else1
+
+if.then1:
+	%call5 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([4 x i8]* @.str1, i32 0, i32 0), i32 1)
+	br label %if.end1
+
+if.else1:
+	%call6 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([4 x i8]* @.str1, i32 0, i32 0), i32 327)
+	br label %if.end1
+
+if.end1:
+	ret i32 0
+}
+
